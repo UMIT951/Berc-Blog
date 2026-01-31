@@ -36,17 +36,21 @@ export default async function TagPage({ params }: Props) {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
-      <Button asChild variant="ghost" size="sm" className="mb-8">
+      <Button asChild variant="ghost" size="sm" className="mb-8 font-mono text-xs">
         <Link href="/tags">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Tüm etiketler
+          <ArrowLeft className="w-3 h-3 mr-2" />
+          cd ../etiketler
         </Link>
       </Button>
 
-      <h1 className="text-3xl font-bold mb-2">#{decodedTag}</h1>
-      <p className="text-muted-foreground mb-8">{posts.length} yazı</p>
+      <div className="flex items-center gap-3 mb-8">
+        <h1 className="text-lg font-semibold font-mono">./{decodedTag}</h1>
+        <span className="text-xs font-mono text-muted-foreground px-2 py-1 bg-secondary rounded">
+          {posts.length} kayit
+        </span>
+      </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3">
         {posts.map((post) => (
           <BlogCard key={post.slug} post={post} />
         ))}

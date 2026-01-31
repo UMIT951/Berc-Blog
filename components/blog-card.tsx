@@ -1,7 +1,5 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { Calendar, Clock } from "lucide-react"
 import type { Post } from "@/lib/posts"
 
 interface BlogCardProps {
@@ -11,39 +9,33 @@ interface BlogCardProps {
 export function BlogCard({ post }: BlogCardProps) {
   const formattedDate = new Date(post.date).toLocaleDateString("tr-TR", {
     year: "numeric",
-    month: "long",
-    day: "numeric",
+    month: "2-digit",
+    day: "2-digit",
   })
 
   return (
     <Link href={`/blog/${post.slug}`} className="block group">
-      <Card className="bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-        <CardHeader className="pb-2">
-          <h2 className="text-xl font-semibold text-card-foreground group-hover:text-primary transition-colors text-balance">
-            {post.title}
-          </h2>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground pt-2">
-            <span className="flex items-center gap-1">
-              <Calendar className="w-3.5 h-3.5" />
-              {formattedDate}
-            </span>
-            <span className="flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" />
-              {post.readingTime}
-            </span>
+      <article className="p-4 border border-border rounded-lg bg-card hover:border-primary/60 transition-colors">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-base font-medium text-card-foreground group-hover:text-primary transition-colors line-clamp-1">
+              {post.title}
+            </h2>
+            <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{post.excerpt}</p>
           </div>
-        </CardHeader>
-        <CardContent className="pt-0">
-          <p className="text-muted-foreground mb-4 line-clamp-2">{post.excerpt}</p>
-          <div className="flex flex-wrap gap-2">
-            {post.tags.slice(0, 3).map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
+          <div className="flex flex-col items-end gap-1 shrink-0">
+            <span className="text-xs font-mono text-muted-foreground">{formattedDate}</span>
+            <span className="text-xs font-mono text-muted-foreground">{post.readingTime}</span>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+        <div className="flex flex-wrap gap-1.5 mt-3">
+          {post.tags.slice(0, 3).map((tag) => (
+            <Badge key={tag} variant="secondary" className="text-xs font-mono px-2 py-0">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      </article>
     </Link>
   )
 }

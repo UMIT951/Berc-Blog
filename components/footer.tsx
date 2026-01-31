@@ -2,26 +2,26 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 py-8">
+    <footer className="border-t border-border py-6">
       <div className="max-w-4xl mx-auto px-6">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Berkay Blog. All rights reserved.
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs font-mono text-muted-foreground">
+            Arif.E / {new Date().getFullYear()}
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/tags" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Tags
+            <Link href="/tags" className="text-xs font-mono text-muted-foreground hover:text-primary transition-colors">
+              /tags
             </Link>
-            <Link href="/rss.xml" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              RSS
+            <Link href="/rss.xml" className="text-xs font-mono text-muted-foreground hover:text-primary transition-colors">
+              /rss
             </Link>
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-xs font-mono text-muted-foreground hover:text-primary transition-colors"
             >
-              GitHub
+              /github
             </a>
           </div>
         </div>

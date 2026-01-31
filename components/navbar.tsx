@@ -19,7 +19,7 @@ export function Navbar() {
       <nav className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-2 h-2 rounded-full bg-primary" />
-          <span className="font-mono font-semibold text-base group-hover:text-primary transition-colors tracking-tight">BERC</span>
+          <span className="font-mono font-semibold text-base group-hover:text-primary transition-colors tracking-tight">Arif.E</span>
         </Link>
 
         <div className="flex items-center gap-2">

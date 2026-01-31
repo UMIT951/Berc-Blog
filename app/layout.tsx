@@ -12,24 +12,24 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jet
 
 export const metadata: Metadata = {
   title: {
-    default: "BERC",
-    template: "%s | BERC",
+    default: "Arif.E",
+    template: "%s | Arif.E",
   },
   description: "Elektronik, yazilim, gomulu sistemler. Net, teknik, sade.",
   keywords: ["elektronik", "yazilim", "gomulu sistemler", "algoritmalar", "mikrodenetleyici", "embedded"],
-  authors: [{ name: "BERC" }],
-  creator: "BERC",
+  authors: [{ name: "Arif.E" }],
+  creator: "Arif.E",
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://berc.blog",
-    siteName: "BERC",
-    title: "BERC",
+    url: "https://arif.blog",
+    siteName: "Arif.E",
+    title: "Arif.E",
     description: "Elektronik, yazilim, gomulu sistemler.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BERC",
+    title: "Arif.E",
     description: "Elektronik, yazilim, gomulu sistemler.",
   },
   robots: {

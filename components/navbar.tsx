@@ -18,10 +18,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-sm">
       <nav className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-sm">B</span>
-          </div>
-          <span className="font-semibold text-lg group-hover:text-primary transition-colors">Berkay Blog</span>
+          <div className="w-2 h-2 rounded-full bg-primary" />
+          <span className="font-mono font-semibold text-base group-hover:text-primary transition-colors tracking-tight">BERC</span>
         </Link>
 
         <div className="flex items-center gap-2">

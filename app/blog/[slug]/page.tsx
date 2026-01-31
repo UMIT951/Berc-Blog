@@ -61,35 +61,36 @@ export default async function BlogPage({ params }: Props) {
   return (
     <article className="max-w-3xl mx-auto px-6 py-12">
       {/* Back Button */}
-      <Button asChild variant="ghost" size="sm" className="mb-8">
+      <Button asChild variant="ghost" size="sm" className="mb-8 font-mono text-xs">
         <Link href="/">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Tüm yazılar
+          <ArrowLeft className="w-3 h-3 mr-2" />
+          cd ..
         </Link>
       </Button>
 
       {/* Header */}
-      <header className="mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-balance">{post.title}</h1>
+      <header className="mb-8 pb-8 border-b border-border">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-balance tracking-tight">{post.title}</h1>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
-          <span className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" />
+        <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted-foreground mb-4">
+          <span className="flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5" />
             {formattedDate}
           </span>
-          <span className="flex items-center gap-1">
-            <Clock className="w-4 h-4" />
+          <span className="text-border">|</span>
+          <span className="flex items-center gap-1.5">
+            <Clock className="w-3.5 h-3.5" />
             {post.readingTime}
           </span>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {post.tags.map((tag) => (
             <Badge
               key={tag}
               variant="secondary"
               asChild
-              className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+              className="text-xs font-mono px-2 py-0 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
             >
               <Link href={`/tags/${tag}`}>{tag}</Link>
             </Badge>
@@ -99,7 +100,7 @@ export default async function BlogPage({ params }: Props) {
 
       {/* Excerpt */}
       {post.excerpt && (
-        <p className="text-lg text-muted-foreground mb-8 pb-8 border-b border-border italic">{post.excerpt}</p>
+        <p className="text-base text-muted-foreground mb-8 leading-relaxed">{post.excerpt}</p>
       )}
 
       {/* Content */}
@@ -109,10 +110,10 @@ export default async function BlogPage({ params }: Props) {
 
       {/* Footer */}
       <footer className="mt-12 pt-8 border-t border-border">
-        <Button asChild variant="secondary">
+        <Button asChild variant="secondary" size="sm" className="font-mono text-xs">
           <Link href="/">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Diğer yazılara göz at
+            <ArrowLeft className="w-3 h-3 mr-2" />
+            ls ./yazilar
           </Link>
         </Button>
       </footer>
